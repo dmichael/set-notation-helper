@@ -1,7 +1,7 @@
 SetNotationHelper
 =================
 
-A library providing set notation support for ActiveRecord models. Include this module in the models you want to support set notation finders and you are all set.
+A library providing set notation support for ActiveRecord models. Include this module in the models you want to support set notation finders and you are all set, or install the gem and add it to your environment to add support for all your models.
 
 To use:
   
