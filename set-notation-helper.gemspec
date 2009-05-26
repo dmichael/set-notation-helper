@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "set-notation-helper"
-  s.version  = "0.2"
+  s.version  = "0.3"
   s.date     = "2009-05-26"
   s.summary  = "Find by set notation in Active Record"
   s.email    = "david.michael@gmail.com"
