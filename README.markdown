@@ -5,8 +5,8 @@ A library providing set notation support for ActiveRecord models. Include this m
 
 To use:
   
-  class Sound < ActiveRecord::Base
-    include NamedScopeHelper
-  end
+    class Sound < ActiveRecord::Base
+      include NamedScopeHelper
+    end
   
-  sound = Sound.in_set("{1,2,3}")
+    sound = Sound.in_set("{1,2,3}")
