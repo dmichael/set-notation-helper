@@ -10,3 +10,14 @@ To use:
     end
   
     sound = Sound.in_set("{1,2,3}")
+    
+If you are interested in matching for sets in the routes you can do something like this
+
+    regexes = [/%7B\s*([\d\-,(%20)*]*)\s*%7D/, /\{\s*([\d\-,\s*]*)\s*\}/]
+  	
+  	set_regexes.each do |regex|
+      map.with_options( :controller => 'sounds', :action => 'index', :id => regex, :conditions => { :method => :get }) do |r|
+        r.connect "/#{resource}/:id.:format"
+        r.connect "/#{resource}/:id"
+      end
+    end
