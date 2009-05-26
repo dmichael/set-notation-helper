@@ -2,7 +2,7 @@ SetNotationHelper
 =================
 
 A library providing set notation support via a named_scope for ActiveRecord models. 
-
+ 
 Have you ever wanted to manipulate a set of resources from the database from a URL but were not sure how? Let me suggest using set notation for the ID.
 
     GET /sounds/{1,2,3}
