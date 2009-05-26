@@ -4,6 +4,7 @@ module SetNotationHelper
     base.extend(ClassMethods)
   end
   
+  
   module ClassMethods
     
     def inherited(subclass)
