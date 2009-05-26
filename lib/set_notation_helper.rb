@@ -1,27 +1,8 @@
 module SetNotationHelper
   
   def self.included(base)
-    base.class_eval do
-      extend SetNotationHelper::ClassMethods    
-      
-      # This scope accepts either a String in the form "{1,2,3}" **OR** an Integer
-      named_scope :in_set, lambda { |*args|
-        value = args.first
-
-        # A string input is either a set or an integer in disguise
-        unless value.is_a?(String) || value.is_a?(Integer)
-          logger.error "[SetNotationHelper] You have given the helper something it cant use: #{value.class}. No filter applied!"
-          return {} 
-        end
-
-        if is_set?(value)
-          { :conditions => "#{table_name}.id IN (#{ parse_set(value).to_a.join(',') })" }
-        else
-          { :conditions => "#{table_name}.id = #{ value.to_i }" }
-        end
-      }
-         
-    end 
+    base.extend(ClassMethods)
+    # base.send :include, ClassMethods
   end
   
   def set_limit
@@ -29,6 +10,23 @@ module SetNotationHelper
   end
   
   module ClassMethods
+    
+    # This scope accepts either a String in the form "{1,2,3}" **OR** an Integer
+    named_scope :in_set, lambda { |*args|
+      value = args.first
+
+      # A string input is either a set or an integer in disguise
+      unless value.is_a?(String) || value.is_a?(Integer)
+        logger.error "[SetNotationHelper] You have given the helper something it cant use: #{value.class}. No filter applied!"
+        return {} 
+      end
+
+      if is_set?(value)
+        { :conditions => "#{table_name}.id IN (#{ parse_set(value).to_a.join(',') })" }
+      else
+        { :conditions => "#{table_name}.id = #{ value.to_i }" }
+      end
+    }
         
     def is_set_or_range?(input)
       if is_set?(input) or is_range?(input)
