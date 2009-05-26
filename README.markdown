@@ -10,6 +10,9 @@ To use:
     end
   
     sound = Sound.in_set("{1,2,3}")
+
+Matching sets in the routes
+---------------------------
     
 If you are interested in matching for sets in the routes you can do something like this
 
