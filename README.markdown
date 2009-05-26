@@ -1,7 +1,13 @@
 SetNotationHelper
 =================
 
-A library providing set notation support for ActiveRecord models. Include this module in the models you want to support set notation finders and you are all set, or install the gem and add it to your environment to add support for all your models.
+A library providing set notation support via a named_scope for ActiveRecord models. 
+
+Have you ever wanted to manipulate a set of resources from the database from a URL but were not sure how? Let me suggest using set notation for the ID.
+
+    GET /sounds/{1,2,3}
+
+Install the gem and add it to your environment to add support for all your models.
 
 To use:
   
