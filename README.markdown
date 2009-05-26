@@ -11,7 +11,7 @@ To use:
 Installation
 ------------
 
-    sudo gem install set-notation-helper -s http://gems.github.com
+    sudo gem install dmichael-set-notation-helper -s http://gems.github.com
     
 Add the gem to your environment.rb file
     
@@ -28,7 +28,7 @@ If you are interested in matching for sets in the routes you can do something li
       /\{\s*([\d\-,\s*]*)\s*\}/
     ]
   	
-  	set_regexes.each do |regex|
+  	regexes.each do |regex|
       map.with_options( :controller => 'sounds', :action => 'index', :id => regex, :conditions => { :method => :get }) do |r|
         r.connect "/#{resource}/:id.:format"
         r.connect "/#{resource}/:id"
