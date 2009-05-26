@@ -21,7 +21,7 @@ Installation
     
 Add the gem to your environment.rb file
     
-    config.gem "set-notation-helper", :lib => 'set_notation_helper'
+    config.gem "dmichael-set-notation-helper", :lib => 'set_notation_helper'
     
 
 Matching for sets in your routes
